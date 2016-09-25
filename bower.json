@@ -1,0 +1,33 @@
+{
+  "name": "java-angularjs-template",
+  "authors": [
+    "Eric Reis Figueiredo <eric_reisfig@poli.ufrj.br>"
+  ],
+  "description": "A Java / Maven / AngularJS template project",
+  "main": "src/main/webapp/index.html",
+  "keywords": [
+    "java",
+    "maven",
+    "angularjs",
+    "template"
+  ],
+  "license": "MIT",
+  "homepage": "bigu.tech",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/main/webapp/content",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-animate": "^1.5.8",
+    "angular-loader": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular": "^1.5.8",
+    "angular-mocks": "^1.5.8",
+    "bootstrap": "^3.3.7"
+  }
+}
