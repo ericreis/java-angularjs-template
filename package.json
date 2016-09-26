@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "description": "A template project for AngularJS combined with Java and Maven",
+  "repository": "https://github.com/ericreis/java-angularjs-template.git",
   "devDependencies": {
     "bower": "^1.7.9",
     "typings": "^1.4.0",

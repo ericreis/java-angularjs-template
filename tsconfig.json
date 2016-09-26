@@ -16,7 +16,10 @@
     "suppressImplicitAnyIndexErrors": true
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "/src/main/vendor/typings/globals",
+    "/src/main/vendor/typings/index.d.ts",
+    "target"
   ],
   "compileOnSave": true,
   "buildOnSave": false,

@@ -1,15 +1,19 @@
 namespace App.Components.Home {
 
-	export class HomeController extends BaseController {
+    export class HomeController extends BaseController {
 
 		public exampleParam: string;
 
-		public static $inject: string[] = [];
+		public static $inject: string[] = ['$http'];
 
-		constructor() {
+		constructor(private $http: ng.IHttpService) {
 			super();
 
-			this.exampleParam = "Hello World!";
+            var url: string = App.Config.API_URL + "/api/home/get";
+
+            this.$http.get(url).then((response: any) => {
+                this.exampleParam = response.data.exampleParam;
+            });
 		}
 	}
 
