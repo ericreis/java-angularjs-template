@@ -18,7 +18,6 @@ public class WebApiConfig extends Application
     @Override
     public Set<Class<?>> getClasses()
     {
-        System.out.println("getClasses");
         final Set<Class<?>> resources = new java.util.HashSet<>();
 
         // following code can be used to customize Jersey 2.0 JSON provider:
@@ -42,7 +41,6 @@ public class WebApiConfig extends Application
      */
     private void addRestResourceClasses(final Set<Class<?>> resources)
     {
-        System.out.println("addRestResourceClasses");
         resources.add(HomeController.class);
     }
 

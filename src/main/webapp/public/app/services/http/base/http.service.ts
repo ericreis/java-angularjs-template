@@ -18,14 +18,14 @@ namespace App.Services.Http.Base {
             return '';
         }
 
-        private GetUrl(actionUrl: string, stringParameters?: string): string {
+        private getUrl(actionUrl: string, stringParameters?: string): string {
             return this.baseServiceUrl + '/' + actionUrl + this.getCleanStringParameters(stringParameters);
         }
 
-        protected Get(actionUrl: string, stringParameters?: string, dontUseExceptionHandling?: boolean) {
+        protected get(actionUrl: string, stringParameters?: string, dontUseExceptionHandling?: boolean) {
             var defer = this.$q.defer();
 
-            var url = this.GetUrl(actionUrl, stringParameters);
+            var url = this.getUrl(actionUrl, stringParameters);
 
             this.$http.get(url).then(
                 (data) => {
@@ -38,8 +38,8 @@ namespace App.Services.Http.Base {
             return defer.promise;
         }
 
-        protected Post(actionUrl: string, data: any, dontUseExceptionHandling?: boolean) {
-            var url = this.GetUrl(actionUrl);
+        protected post(actionUrl: string, data: any, dontUseExceptionHandling?: boolean) {
+            var url = this.getUrl(actionUrl);
 
             var defer = this.$q.defer();
 

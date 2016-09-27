@@ -22,7 +22,6 @@ public class HomeController
     @Produces(MediaType.APPLICATION_JSON)
     public Home get()
     {
-        System.out.println("get");
-        return new Home("Test Application");
+        return new Home("Welcome to your amazing application!");
     }
 }

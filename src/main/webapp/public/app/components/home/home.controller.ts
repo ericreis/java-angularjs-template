@@ -1,6 +1,7 @@
 namespace App.Components.Home {
 
     import HomeDataService = App.Services.Http.HomeDataService;
+
 	export class HomeController extends BaseController {
 
 		public exampleParam: string;
@@ -10,7 +11,7 @@ namespace App.Components.Home {
 		constructor(private homeDataService: HomeDataService) {
 			super();
 
-			this.homeDataService.Get().then((data) => {
+			this.homeDataService.get().then((data) => {
 				this.exampleParam = data.exampleParam;
 			});
 		}

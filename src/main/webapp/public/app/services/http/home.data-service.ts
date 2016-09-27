@@ -10,8 +10,8 @@ namespace App.Services.Http {
             super('home', $http, $q);
         }
 
-        public Get(): ng.IPromise<any> {
-            return super.Get("get");
+        public get(): ng.IPromise<any> {
+            return super.get("get");
         }
 
     }
