@@ -1,31 +1,30 @@
 package api.controllers;
 
-
-import api.models.Home;
 import models.User;
 import repository.UserRepository;
 
 import javax.enterprise.context.RequestScoped;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 /**
- * Simple controller class
- * Created by ericreis on 9/25/16.
+ * Simple user controller class
+ * Created by ericreis on 9/27/16.
  */
-@Path("/home")
+@Path("/user")
 @RequestScoped
-public class HomeController
+public class UserController
 {
-    private UserRepository userRepo;
+    private UserRepository userRepo = new UserRepository();
 
     @GET
-    @Path("/get")
+    @Path("/get/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Home get()
+    public User getById(@PathParam("id") int id)
     {
-        return new Home("Welcome to your amazing application!");
+        return userRepo.getUserById(id);
     }
 }

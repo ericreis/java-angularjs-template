@@ -1,0 +1,12 @@
+<div style="margin-top: 150px;">
+    <form>
+        <input title="User Id" ng-model="userCtrl.userId">
+        <button ng-click="userCtrl.search()">Search!</button>
+    </form>
+
+    <p>{{userCtrl.user.id}}</p>
+    <p>{{userCtrl.user.username}}</p>
+    <p>{{userCtrl.user.password}}</p>
+    <p>{{userCtrl.user.email}}</p>
+    <p>{{userCtrl.user.creationDate}}</p>
+</div>
