@@ -2,8 +2,11 @@ package repository;
 
 
 import repository.config.RepositoryConfig;
+import repository.util.NamedParameterStatement;
 
 import java.sql.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * simple base repository
@@ -13,6 +16,7 @@ public class BaseRepository
 {
     protected Connection conn;
     protected Statement stmt;
+    protected NamedParameterStatement namedStmt;
 
     public BaseRepository()
     {
@@ -38,5 +42,35 @@ public class BaseRepository
         {
             e.printStackTrace();
         }
+    }
+
+    protected void createNamedParameterStatement(String query, HashMap<String, Object> params)
+    {
+        try
+        {
+            this.namedStmt = new NamedParameterStatement(this.conn, query);
+
+            for (Map.Entry<String, Object> param : params.entrySet())
+            {
+                this.namedStmt.setObject(param.getKey(), param.getValue());
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void finalize() throws Throwable
+    {
+        this.conn.close();
+        this.stmt.close();
+
+        super.finalize();
     }
 }
